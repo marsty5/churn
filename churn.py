@@ -1,19 +1,13 @@
 import pandas as pd
+import numpy as np
+from create_tree import create_tree
 
 customerDf = pd.read_csv('datasets/churn.data.simple.noDot')
 
-# Create the decision tree model
-def create_tree(customerDf):
+del customerDf['state']
+del customerDf['area_code']
+del customerDf['international_plan']
+del customerDf['voice_mail_plan']
 
-    attributes = customerDf.columns
-    information_gains = map(lambda x: information_gain(x,customerDf),attributes)
-
-
-# Calculate the information gain of one attribute
-def information_gain(attribute, customerDf):
-    # TODO
-    return 0.0
-
-
-
+create_tree(customerDf)
 
