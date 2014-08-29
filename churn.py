@@ -8,4 +8,5 @@ del customerDf['area_code']
 del customerDf['international_plan']
 del customerDf['voice_mail_plan']
 
-create_tree(customerDf)
+tree = create_tree(customerDf)
+print tree
